@@ -14,3 +14,7 @@ def get_password():
         password = input("Please enter your password:")
 
     return password
+
+
+def print_password_asterisks(password):
+    print("*" * len(password))
