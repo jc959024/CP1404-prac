@@ -57,3 +57,7 @@ def print_result(score):
 
 def show_stars(score):
     print('*' * int(score))
+
+
+def display_menu():
+    print(MENU)
