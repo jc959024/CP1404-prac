@@ -53,3 +53,7 @@ def get_valid_score():
 def print_result(score):
     result = evaluate_score(score)
     print(result)
+
+
+def show_stars(score):
+    print('*' * int(score))
