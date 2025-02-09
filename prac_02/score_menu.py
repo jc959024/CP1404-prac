@@ -61,3 +61,6 @@ def show_stars(score):
 
 def display_menu():
     print(MENU)
+
+
+main()
