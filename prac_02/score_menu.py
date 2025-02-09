@@ -36,3 +36,15 @@ def evaluate_score(score):
         return "Passable"
     else:
         return "Bad"
+
+
+def get_valid_score():
+    while True:
+        try:
+            score = float(input("Enter score (0-100): "))
+            if 0 <= score <= 100:
+                return score
+            else:
+                print("Invalid score. Please enter a score between 0 and 100.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
