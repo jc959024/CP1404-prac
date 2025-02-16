@@ -15,10 +15,12 @@ MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
 FILENAME = "prices.txt"
-out_file = open(FILENAME, 'w')
 
 price = INITIAL_PRICE
-print(f"${price:,.2f}")
+out_file = open(FILENAME, 'w')
+print(f"Starting price: ${price:,.2f}")
+print(f"Starting price: ${price:,.2f}", file=out_file)
+
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
