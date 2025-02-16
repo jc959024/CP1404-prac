@@ -22,3 +22,6 @@ print(f"My {name} would cost ${cost:,.2f}")  # preferred f-string version
 numbers = [1, 19, 123, 456, -25]
 for i, number in enumerate(numbers, 1):
     print(f"Number {i} is {number:5}")  # 修正缩进
+
+for i in range(11):
+    print(f"2 ^ {i:2} is {2 ** i:4}")
