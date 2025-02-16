@@ -14,6 +14,8 @@ MAX_DECREASE = 0.05
 MIN_PRICE = 1.0
 MAX_PRICE = 100.0
 INITIAL_PRICE = 10.0
+FILENAME = "prices.txt"
+out_file = open(FILENAME, 'w')
 
 price = INITIAL_PRICE
 print(f"${price:,.2f}")
