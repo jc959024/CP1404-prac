@@ -16,3 +16,9 @@ print(f"My {name} was first made in {year} (that's right, {year}!)")
 # Formatting currency (grouping with comma, 2 decimal places):
 print("My {} would cost ${:,.2f}".format(name, cost))  # str.format version
 print(f"My {name} would cost ${cost:,.2f}")  # preferred f-string version
+
+# Aligning columns by using width after the :
+# This loop uses enumerate, which is useful when you want both the index and value
+numbers = [1, 19, 123, 456, -25]
+for i, number in enumerate(numbers, 1):
+    print(f"Number {i} is {number:5}")  # 修正缩进
