@@ -7,14 +7,12 @@ with open("name.txt", "r") as file:
 print(f"Hi {name}!")
 
 with open("numbers.txt", "r") as file:
-    first_number = int(file.readline().strip())
-    second_number = int(file.readline().strip())
+    numbers = [int(line.strip()) for line in file]
 
-result = first_number + second_number
-print(result)
+if len(numbers) >= 2:
+    result = numbers[0] + numbers[1]
+    print(result)
 
-total = 0
-with open("numbers.txt", "r") as file:
-    for line in file:
-        total += int(line.strip())
+total = sum(numbers)
 print(total)
+
