@@ -5,17 +5,25 @@ def main():
 
 
 def number_statistics():
-    """Prompt the user for 5 numbers, store them in a list, and display statistics."""
+    """Prompt the user for numbers until a negative number is entered, then display statistics."""
     numbers = []
-    for i in range(5):
-        number = int(input("Number: "))
-        numbers.append(number)
+    count = 1
 
-    print(f"The first number is {numbers[0]}")
-    print(f"The last number is {numbers[-1]}")
-    print(f"The smallest number is {min(numbers)}")
-    print(f"The largest number is {max(numbers)}")
-    print(f"The average of the numbers is {sum(numbers) / len(numbers):.1f}")
+    while True:
+        number = int(input(f"Number {count}: "))
+        if number < 0:
+            break
+        numbers.append(number)
+        count += 1
+
+    if numbers:
+        print(f"The first number is {numbers[0]}")
+        print(f"The last number is {numbers[-1]}")
+        print(f"The smallest number is {min(numbers)}")
+        print(f"The largest number is {max(numbers)}")
+        print(f"The average of the numbers is {sum(numbers) / len(numbers):.1f}")
+    else:
+        print("No valid numbers entered.")
 
 
 def user_authentication():
@@ -33,4 +41,3 @@ def user_authentication():
 
 
 main()
-
