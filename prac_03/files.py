@@ -15,4 +15,3 @@ if len(numbers) >= 2:
 
 total = sum(numbers)
 print(total)
-
