@@ -1,4 +1,10 @@
 def main():
+    """Main function to run number statistics and user authentication."""
+    number_statistics()
+    user_authentication()
+
+
+def number_statistics():
     """Prompt the user for 5 numbers, store them in a list, and display statistics."""
     numbers = []
     for i in range(5):
@@ -27,3 +33,4 @@ def user_authentication():
 
 
 main()
+
