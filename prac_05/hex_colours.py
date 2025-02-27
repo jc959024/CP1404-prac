@@ -15,3 +15,16 @@ HEX_COLOURS = {
     "Blue": "#0000ff"
 }
 
+
+def main():
+    colour_name = input("Enter colour name: ").strip()
+    while colour_name:
+        try:
+            print(f"{colour_name.title()} is {HEX_COLOURS[colour_name.title()]}")
+        except KeyError:
+            print("Invalid colour name")
+        colour_name = input("Enter colour name: ").strip()
+
+
+if __name__ == "__main__":
+    main()
