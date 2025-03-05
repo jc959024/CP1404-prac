@@ -1,5 +1,8 @@
 def main():
-    guitars = []
+    guitars = [
+        Guitar("Gibson L-5 CES", 1922, 16035.40),
+        Guitar("Line 6 JTV-59", 2010, 1512.90)
+    ]
 
     print("My guitars!")
     name = input("Name: ")
