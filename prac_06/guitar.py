@@ -1,3 +1,10 @@
+"""
+Word Occurrences
+Estimate: 20 minutes
+Actual:   13 minutes
+"""
+
+
 class Guitar:
     CURRENT_YEAR = 2024
     VINTAGE_AGE = 50
