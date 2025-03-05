@@ -18,4 +18,6 @@ def main():
     limo.add_fuel(20)
 
 
+print(f"Limo has fuel: {limo.fuel}")
+print(limo)
 main()
