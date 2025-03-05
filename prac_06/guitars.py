@@ -1,3 +1,11 @@
+"""
+Word Occurrences
+Estimate: 30 minutes
+Actual:   32 minutes
+"""
+from guitar import Guitar
+
+
 def main():
     guitars = [
         Guitar("Gibson L-5 CES", 1922, 16035.40),
@@ -21,3 +29,7 @@ def main():
             print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
     else:
         print("No guitars :( Maybe buy one?")
+
+
+if __name__ == "__main__":
+    main()
