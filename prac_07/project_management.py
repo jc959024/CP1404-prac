@@ -82,3 +82,17 @@ def save_projects(filename, projects):
                 project.cost_estimate,
                 project.completion_percentage
             ])
+
+
+def display_projects(projects):
+    """Display incomplete and completed projects sorted by priority."""
+    incomplete = [p for p in projects if p.completion_percentage < 100]
+    completed = [p for p in projects if p.completion_percentage == 100]
+
+    print("Incomplete projects:")
+    for project in sorted(incomplete, key=lambda x: x.priority):
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in sorted(completed, key=lambda x: x.priority):
+        print(f"  {project}")
