@@ -30,11 +30,19 @@ def add_new_guitars(guitars):
     return guitars
 
 
+def write_guitars(filename, guitars):
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
+
+
 def main():
     filename = "guitars.csv"
     guitars = read_guitars(filename)
     guitars = add_new_guitars(guitars)
     guitars.sort()
+    write_guitars(filename, guitars)
     print("\nThese are your guitars:")
     print_guitars(guitars)
 
