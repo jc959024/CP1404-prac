@@ -18,9 +18,22 @@ def print_guitars(guitars):
         print(f"Guitar {i}: {guitar}")
 
 
+def add_new_guitars(guitars):
+    print("Enter your new guitars (leave name blank to stop):")
+    while True:
+        name = input("Name: ")
+        if name == "":
+            break
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+    return guitars
+
+
 def main():
     filename = "guitars.csv"
     guitars = read_guitars(filename)
+    guitars = add_new_guitars(guitars)
     print("\nThese are your guitars:")
     print_guitars(guitars)
 
