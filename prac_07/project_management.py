@@ -53,3 +53,32 @@ def handle_quit(projects):
         save_projects('projects.txt', projects)
         print("Projects saved to projects.txt")
     print("Thank you for using custom-built project management software.")
+
+
+def load_projects(filename):
+    """Load project data from a file and return a list of Project objects."""
+    projects = []
+    with open(filename, 'r', newline='') as file:
+        reader = csv.reader(file, delimiter='\t')
+        next(reader)  # skip header
+        for row in reader:
+            if row:
+                name, start_date, priority, cost_estimate, completion_percentage = row
+                project = Project(name, start_date, int(priority), float(cost_estimate), int(completion_percentage))
+                projects.append(project)
+    return projects
+
+
+def save_projects(filename, projects):
+    """Write a list of Project objects to a tab-separated file."""
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file, delimiter='\t')
+        writer.writerow(["Name", "Start Date", "Priority", "Cost Estimate", "Completion Percentage"])
+        for project in projects:
+            writer.writerow([
+                project.name,
+                project.start_date.strftime('%d/%m/%Y'),
+                project.priority,
+                project.cost_estimate,
+                project.completion_percentage
+            ])
