@@ -1,4 +1,16 @@
-MENU = "(L)oad projects... \n..."
+"""
+Estimate: 30 minutes
+Actual: 73 minutes
+"""
+
+import csv
+from datetime import datetime
+from project import Project
+
+MENU = (
+    "(L)oad projects\n(S)ave projects\n(D)isplay projects\n(F)ilter projects by date\n"
+    "(A)dd new project\n(U)pdate project\n(Q)uit"
+)
 
 
 def main():
@@ -140,3 +152,7 @@ def update_project(projects):
             selected_project.update_priority(int(new_priority))
     except (IndexError, ValueError):
         print("Invalid selection or input.")
+
+
+if __name__ == '__main__':
+    main()
