@@ -34,6 +34,7 @@ def main():
     filename = "guitars.csv"
     guitars = read_guitars(filename)
     guitars = add_new_guitars(guitars)
+    guitars.sort()
     print("\nThese are your guitars:")
     print_guitars(guitars)
 
