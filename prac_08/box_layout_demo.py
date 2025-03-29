@@ -3,18 +3,20 @@ from kivy.lang import Builder
 
 
 class BoxLayoutDemo(App):
-
     def build(self):
+        """Build and return the root widget from the .kv file."""
         self.title = "Box Layout Demo"
         self.root = Builder.load_file('box_layout.kv')
         return self.root
 
     def handle_greet(self):
+        """Handle the greet button press by showing a greeting with the input name."""
         print('test')
         name = self.root.ids.input_name.text
         self.root.ids.output_label.text = f"Hello {name}"
 
     def handle_clear(self):
+        """Handle the clear button press by resetting input and output fields."""
         self.root.ids.input_name.text = ''
         self.root.ids.output_label.text = ''
 
