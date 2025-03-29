@@ -1,0 +1,51 @@
+BoxLayout:
+    orientation: 'horizontal'
+    padding: 10
+    spacing: 10
+
+    # Left side buttons, vertically split
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.3
+        spacing: 10
+
+        Button:
+            text: 'Clear'
+            size_hint_y: 0.5
+            font_size: 20
+            on_press: app.handle_clear()
+
+        Button:
+            text: 'Greet'
+            size_hint_y: 0.5
+            font_size: 20
+            on_press: app.handle_greet()
+
+    # Right side: input on top, output on bottom
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.7
+        spacing: 10
+
+        TextInput:
+            id: input_name
+            text: ''
+            font_size: 24
+            size_hint_y: 0.5
+
+        Label:
+            id: output_label
+            text: ''
+            color: (1, 1, 0, 1)
+            font_size: 32
+            size_hint_y: 0.5
+            halign: 'center'
+            valign: 'middle'
+            text_size: self.size
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
