@@ -2,7 +2,7 @@ from taxi import Taxi
 
 
 # Create a new taxi object
-my_taxi = Taxi("Prius 1", 100, price_per_km=1.23)
+my_taxi = Taxi("Prius 1", 100)
 
 # Drive 40 km
 my_taxi.drive(40)
