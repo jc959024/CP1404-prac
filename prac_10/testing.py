@@ -51,6 +51,7 @@ def run_tests():
 def format_phrase(words):
     """
     Format a phrase to start with a capital and end with a period.
+    Return an empty string if input is empty.
 
     >>> format_phrase('hello')
     'Hello.'
@@ -58,7 +59,11 @@ def format_phrase(words):
     'It is an ex parrot.'
     >>> format_phrase('cars work.')
     'Cars work.'
+    >>> format_phrase('')
+    ''
     """
+    if not words:
+        return ""
     if words[0].islower():
         words = words[0].upper() + words[1:]
     if words[-1] != ".":
@@ -71,4 +76,3 @@ run_tests()
 
 # Run doctests
 doctest.testmod()
-
