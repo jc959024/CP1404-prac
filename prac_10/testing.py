@@ -36,11 +36,25 @@ def run_tests():
     test_car = Car()
     assert test_car._odometer == 0, "Car does not set odometer correctly"
 
-    # TODO: 2. write assert statements to show if Car sets the fuel correctly
-    # Note that Car's __init__ function sets the fuel in one of two ways:
-    # using the value passed in or the default
-    # You should test both of these
-    car = Car(fuel=10)
+    # Test Car's fuel property
+    def test_car_fuel():
+        car_with_fuel = Car(fuel=10)
+        assert car_with_fuel.fuel == 10, "Initial fuel not set correctly."
+
+        car_without_fuel = Car()
+        assert car_without_fuel.fuel == 0, "Default fuel should be 0."
+
+    test_car_fuel()
+    print("All tests passed.")
+
+
+def format_phrase(words):
+    """Format a phrase to start with a capital and end with a period."""
+    if words[0].islower():
+        words = words[0].upper() + words[1:]
+    if words[-1] != ".":
+        words += "."
+    return words
 
 
 run_tests()
