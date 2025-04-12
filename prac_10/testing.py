@@ -49,7 +49,16 @@ def run_tests():
 
 
 def format_phrase(words):
-    """Format a phrase to start with a capital and end with a period."""
+    """
+    Format a phrase to start with a capital and end with a period.
+
+    >>> format_phrase('hello')
+    'Hello.'
+    >>> format_phrase('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_phrase('cars work.')
+    'Cars work.'
+    """
     if words[0].islower():
         words = words[0].upper() + words[1:]
     if words[-1] != ".":
@@ -57,21 +66,9 @@ def format_phrase(words):
     return words
 
 
+# Run tests
 run_tests()
 
-# TODO: 3. Uncomment the following line and run the doctests
-# (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+# Run doctests
+doctest.testmod()
 
-# TODO: 4. Fix the failing is_long_word function
-# (Don't change the tests, change the function!)
-
-# TODO: 5. Write and test a function to format a phrase as a sentence,
-# starting with a capital and ending with a single full stop.
-# Important: start with a function header and just use pass as the body
-# then add doctests for 3 tests:
-#   'hello' -> 'Hello.'
-#   'It is an ex parrot.' -> 'It is an ex parrot.'
-# and one more that you decide is a useful test.
-# Run your doctests and watch the tests fail.
-# Then write the body of the function so that the tests pass.
